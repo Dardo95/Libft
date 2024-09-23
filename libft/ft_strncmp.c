@@ -1,33 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: enogueir <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/21 18:17:25 by enogueir          #+#    #+#             */
-/*   Updated: 2024/09/21 18:31:45 by enogueir         ###   ########.fr       */
+/*   Created: 2024/09/23 13:48:50 by enogueir          #+#    #+#             */
+/*   Updated: 2024/09/23 14:09:49 by enogueir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *s, int c, size_t n)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	size_t	i;
 
 	i = 0;
-	while (i < n)
-	{
-		((char *)s)[i] = c;
+	while (s1 && s2 && s1[i] == s2[i] && i < n)
 		i++;
-	}
-	return (s);
+	return (((unsigned char *)s1)[i] - ((unsigned char *)s2)[i]);
 }
 /*
+#include <stdio.h>
 int	main(void)
 {
-	char	str[] = "hola que tal";
-	ft_memset(str, 'Z', 12);
-	write(1, str, 12);
+	char	s1[] = "hola ";
+	char	s2[] = "hola";
+	int	result;
+	result	= ft_strncmp(s1, s2, 5);
+	printf("%i",result);
 }*/

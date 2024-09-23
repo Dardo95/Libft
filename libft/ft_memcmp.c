@@ -1,33 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: enogueir <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/21 18:17:25 by enogueir          #+#    #+#             */
-/*   Updated: 2024/09/21 18:31:45 by enogueir         ###   ########.fr       */
+/*   Created: 2024/09/23 17:58:13 by enogueir          #+#    #+#             */
+/*   Updated: 2024/09/23 18:32:24 by enogueir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *s, int c, size_t n)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	size_t	i;
+	unsigned char	*str1;
+	unsigned char	*str2;
+	size_t			i;
 
+	str1 = (unsigned char *)s1;
+	str2 = (unsigned char *)s2;
 	i = 0;
+	if (n == 0)
+		return (0);
 	while (i < n)
 	{
-		((char *)s)[i] = c;
+		if (str1[i] != str2[i])
+			return (str1[i] - str2[i]);
 		i++;
 	}
-	return (s);
+	return (0);
 }
-/*
-int	main(void)
-{
-	char	str[] = "hola que tal";
-	ft_memset(str, 'Z', 12);
-	write(1, str, 12);
-}*/

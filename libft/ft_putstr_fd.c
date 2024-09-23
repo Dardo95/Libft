@@ -1,33 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: enogueir <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/21 18:17:25 by enogueir          #+#    #+#             */
-/*   Updated: 2024/09/21 18:31:45 by enogueir         ###   ########.fr       */
+/*   Created: 2024/09/23 12:23:46 by enogueir          #+#    #+#             */
+/*   Updated: 2024/09/23 13:46:20 by enogueir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *s, int c, size_t n)
+void	ft_putstr_fd(char *s, int fd)
 {
-	size_t	i;
-
-	i = 0;
-	while (i < n)
+	while (*s)
 	{
-		((char *)s)[i] = c;
-		i++;
+		write(fd, s, 1);
+		s++;
 	}
-	return (s);
 }
-/*
+
 int	main(void)
 {
-	char	str[] = "hola que tal";
-	ft_memset(str, 'Z', 12);
-	write(1, str, 12);
-}*/
+	ft_putstr_fd("hola mundo", 1);
+}

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: enogueir <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/09/23 12:31:37 by enogueir          #+#    #+#             */
+/*   Updated: 2024/09/23 12:31:43 by enogueir         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
@@ -5,7 +17,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	size_t	i;
 
 	if (dest == NULL && src == NULL)
-        	return NULL;
+		return (NULL);
 	if (src < dest)
 	{
 		while (n > 0)
@@ -23,9 +35,9 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 			i++;
 		}
 	}
-	return(dest);
+	return (dest);
 }
-
+/*
 #include <stdio.h>
 int main() {
     char src[50] = "Hola, mundo!";
@@ -38,4 +50,4 @@ int main() {
     printf("Después de memmove: %s\n", dest);
 
     return 0;
-}
+}*/

@@ -1,22 +1,33 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: enogueir <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/09/23 12:33:24 by enogueir          #+#    #+#             */
+/*   Updated: 2024/09/23 12:33:29 by enogueir         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "libft.h"
 
 char	*ft_strrchr(const char *s, int c)
 {
-	int lenstr;
-	
+	int	lenstr;
+
 	lenstr = ft_strlen(s);
 	if (c == '\0')
-                return (char *)&s[lenstr];
+		return ((char *)&s[lenstr]);
 	while (lenstr >= 0)
 	{
-		if(s[lenstr] == (char)c)
-			return (char *)&s[lenstr];
+		if (s[lenstr] == (char)c)
+			return ((char *)&s[lenstr]);
 		lenstr--;
 	}
-	return NULL;
+	return (NULL);
 }
-
+/*
 #include <stdio.h>
 int main(void) {
     char str[] = "hola mundo, que tal llevas el dia";
@@ -31,4 +42,4 @@ int main(void) {
     }
 
     return 0;
-}
+}*/
