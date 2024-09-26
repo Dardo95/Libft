@@ -1,37 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: enogueir <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/21 18:53:29 by enogueir          #+#    #+#             */
-/*   Updated: 2024/09/25 16:50:43 by enogueir         ###   ########.fr       */
+/*   Created: 2024/09/24 13:18:25 by enogueir          #+#    #+#             */
+/*   Updated: 2024/09/24 13:31:07 by enogueir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+char	*ft_strnstr(const char *big, const char *fstr, size_t len)
 {
 	size_t	i;
+	size_t	j;
 
 	i = 0;
-	while (i < n)
+	if (fstr[0] == '\0')
+		return ((char *)big);
+	while (big[i] != '\0' && i < len)
 	{
-		((unsigned char *)dest)[i] = ((unsigned char *)src)[i];
+		if (big[i] == fstr[0])
+		{
+			j = 0;
+			while (fstr[j] != '\0' && big[i + j] == fstr[j] && (i + j) < len)
+				j++;
+			if (fstr[j] == '\0')
+				return (&big[i]);
+		}
 		i++;
 	}
-	return (dest);
+	return (NULL);
 }
-/*
-int main(void)
-{
-	char src[] = "EstoEsUnTestDeMemCPY";
-	char dest[] = "Hola que tal?";
-
-	ft_memcpy(dest, src, 19);
-
-	write(1, src, 19);
-	return (0);
-}*/

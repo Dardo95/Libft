@@ -6,7 +6,7 @@
 /*   By: enogueir <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 12:32:29 by enogueir          #+#    #+#             */
-/*   Updated: 2024/09/23 12:32:33 by enogueir         ###   ########.fr       */
+/*   Updated: 2024/09/26 17:32:49 by enogueir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,10 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	size_t	lensrc;
 	size_t	i;
 
-	lendst = ft_strlen(dst);
 	lensrc = ft_strlen(src);
+	if (size == 0)
+		return (lensrc);
+	lendst = ft_strlen(dst);
 	i = 0;
 	if (size > lendst)
 	{

@@ -1,37 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: enogueir <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/21 18:53:29 by enogueir          #+#    #+#             */
-/*   Updated: 2024/09/25 16:50:43 by enogueir         ###   ########.fr       */
+/*   Created: 2024/09/25 17:44:08 by enogueir          #+#    #+#             */
+/*   Updated: 2024/09/25 21:41:36 by enogueir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+char	*ft_strdup(const char *s)
 {
-	size_t	i;
+	char *str;
+	int	len;
 
-	i = 0;
-	while (i < n)
-	{
-		((unsigned char *)dest)[i] = ((unsigned char *)src)[i];
-		i++;
-	}
-	return (dest);
+	if (s == NULL)
+		return (NULL);
+	len = ft_strlen(s) + 1;
+	str = malloc(len * sizeof(char));
+	if (!str)
+		return (NULL);
+	ft_strlcpy(str, s, len);
+	return (str);
 }
 /*
-int main(void)
+int	main(void)
 {
-	char src[] = "EstoEsUnTestDeMemCPY";
-	char dest[] = "Hola que tal?";
+	char *s = "hola";
+	char *str;
 
-	ft_memcpy(dest, src, 19);
-
-	write(1, src, 19);
-	return (0);
+	str = ft_strdup(NULL);
+	printf("%s", str);
+	free(str);
+	return(0);
 }*/
