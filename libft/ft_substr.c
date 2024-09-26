@@ -6,7 +6,7 @@
 /*   By: enogueir <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/26 10:36:44 by enogueir          #+#    #+#             */
-/*   Updated: 2024/09/26 14:17:40 by enogueir         ###   ########.fr       */
+/*   Updated: 2024/09/26 18:07:29 by enogueir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	if (start >= slen)
 		len = 0;
 	if (len > slen - start)
-		len = slen -start;
+		len = slen - start;
 	substr = malloc(sizeof(char) * (len + 1));
 	if (!substr)
 		return (NULL);

@@ -6,7 +6,7 @@
 /*   By: enogueir <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/26 14:18:22 by enogueir          #+#    #+#             */
-/*   Updated: 2024/09/26 17:47:49 by enogueir         ###   ########.fr       */
+/*   Updated: 2024/09/26 18:21:15 by enogueir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 {
 	size_t	len;
 	char	*ptr;
-	
+
 	if (!s1 || !s2)
 		return (NULL);
 	len = ft_strlen(s1) + ft_strlen(s2);
@@ -28,7 +28,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	ptr[len] = '\0';
 	return (ptr);
 }
-
+/*
 int	main(void)
 {
 	char *s1 = "hola";
@@ -36,4 +36,4 @@ int	main(void)
 	char *result = ft_strjoin(s1, s2);
 	printf("%s", result);
 	free(result);
-}
+}*/

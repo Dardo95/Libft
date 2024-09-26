@@ -6,7 +6,7 @@
 /*   By: enogueir <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 17:44:08 by enogueir          #+#    #+#             */
-/*   Updated: 2024/09/25 21:41:36 by enogueir         ###   ########.fr       */
+/*   Updated: 2024/09/26 18:20:50 by enogueir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_strdup(const char *s)
 {
-	char *str;
-	int	len;
+	char	*str;
+	size_t	len;
 
 	if (s == NULL)
 		return (NULL);
@@ -32,7 +32,7 @@ int	main(void)
 	char *s = "hola";
 	char *str;
 
-	str = ft_strdup(NULL);
+	str = ft_strdup(s);
 	printf("%s", str);
 	free(str);
 	return(0);
