@@ -1,27 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: enogueir <enogueir@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/23 12:23:46 by enogueir          #+#    #+#             */
-/*   Updated: 2024/09/23 13:46:20 by enogueir         ###   ########.fr       */
+/*   Created: 2024/09/28 16:30:43 by enogueir          #+#    #+#             */
+/*   Updated: 2024/09/28 16:30:51 by enogueir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr_fd(char *s, int fd)
+static void	ft_toup(unsigned int i, char *c)
 {
-	while (*s)
+	(void)i;
+	if (c)
 	{
-		write(fd, s, 1);
-		s++;
+		if (*c >= 'a' && *c <= 'z' && *c)
+		{
+			*c = *c - 32;
+		}
 	}
 }
 
-int	main(void)
+void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
-	ft_putstr_fd("hola mundo", 1);
+	int	i;
+
+	i = 0;
+	if (!s)
+		return ;
+	while (s[i])
+	{
+		f(i, &s[i]);
+		i++;
+	}
 }
+
+/*int	main(void)
+{
+	char	str[] = "hola";
+
+	ft_striteri(str, ft_toup);
+	printf("%s\n", str);
+	return (0);
+}*/

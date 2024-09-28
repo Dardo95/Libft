@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: enogueir <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: enogueir <enogueir@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/21 18:53:29 by enogueir          #+#    #+#             */
 /*   Updated: 2024/09/25 16:50:43 by enogueir         ###   ########.fr       */

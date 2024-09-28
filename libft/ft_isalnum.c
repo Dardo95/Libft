@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: enogueir <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: enogueir <enogueir@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/21 17:55:55 by enogueir          #+#    #+#             */
 /*   Updated: 2024/09/23 12:36:26 by enogueir         ###   ########.fr       */

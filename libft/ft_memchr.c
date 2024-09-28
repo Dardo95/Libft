@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: enogueir <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: enogueir <enogueir@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 14:10:16 by enogueir          #+#    #+#             */
-/*   Updated: 2024/09/23 17:57:54 by enogueir         ###   ########.fr       */
+/*   Updated: 2024/09/28 15:16:13 by enogueir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,17 +24,14 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	while (i < n)
 	{
 		if (str[i] == let)
-			return (&str[i]);
+			return ((void *)&str[i]);
 		i++;
 	}
 	return (NULL);
 }
-/*
-#include <stdio.h>
-#include <string.h>
-int main() {
-    const char str[] = "Hello, world!";
-    char *ptr = ft_memchr(str, 'o', sizeof(str));
+/*int main() {
+    const char str[] = "Hola que tal!";
+    char *ptr = ft_memchr(str, 'a', sizeof(str));
 
     if (ptr != NULL) {
         printf("Encontrado en la posición: %ld\n", ptr - str);

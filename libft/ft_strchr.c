@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: enogueir <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: enogueir <enogueir@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 12:32:15 by enogueir          #+#    #+#             */
-/*   Updated: 2024/09/23 12:32:22 by enogueir         ###   ########.fr       */
+/*   Updated: 2024/09/27 12:47:36 by enogueir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,9 @@ char	*ft_strchr(const char *s, int c)
 	return (NULL);
 }
 /*
-#include <stdio.h>
 int main(void) {
     char str[] = "hola mundo";
-    char *result = ft_strchr(str, 'j');
+    char *result = ft_strchr(str, 'l');
 
     if (result) {
         if (*result == '\0')
