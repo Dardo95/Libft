@@ -6,10 +6,9 @@
 /*   By: enogueir <enogueir@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 16:13:25 by enogueir          #+#    #+#             */
-/*   Updated: 2024/09/28 18:31:54 by enogueir         ###   ########.fr       */
+/*   Updated: 2024/09/30 13:10:39 by enogueir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include "libft.h"
 
@@ -32,10 +31,10 @@ static int	ft_count_num(int n)
 	return (count);
 }
 
-char    *ft_itoa(int n)
+char	*ft_itoa(int n)
 {
 	char	*str;
-	int	len;
+	int		len;
 	long	nb;
 
 	nb = (long)n;
@@ -55,12 +54,13 @@ char    *ft_itoa(int n)
 	{
 		str[len - 1] = ((nb % 10) + '0');
 		nb = (nb / 10);
-		len --;
+		len--;
 	}
-	str[len - 1] = ((nb %10) + '0');
+	str[len - 1] = ((nb % 10) + '0');
 	return (str);
 }
 
+/*
 int main() {
     // Casos de prueba
     int test_cases[] = {
@@ -84,4 +84,4 @@ int main() {
     }
 
     return 0;
-}
+}*/

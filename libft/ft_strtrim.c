@@ -28,7 +28,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	return (str);
 }
 
-/*int	main(void)
+/*int	main(void) proteger nulls
 {
 	char	*st;
 	char	*se;

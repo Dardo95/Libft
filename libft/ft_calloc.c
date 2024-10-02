@@ -6,7 +6,7 @@
 /*   By: enogueir <enogueir@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 16:41:53 by enogueir          #+#    #+#             */
-/*   Updated: 2024/09/26 18:07:58 by enogueir         ###   ########.fr       */
+/*   Updated: 2024/10/01 19:53:23 by enogueir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	*ft_calloc(size_t nmemb, size_t size)
 {
 	char	*ptr;
 
-	if (!(size == 0 && nmemb > MAX_SIZE / size))
+	if (!(size == 0 && nmemb > SIZE_MAX / size))
 	{
 		ptr = malloc(nmemb * size);
 		if (!(ptr))
@@ -24,8 +24,9 @@ void	*ft_calloc(size_t nmemb, size_t size)
 		ft_bzero(ptr, nmemb * size);
 		return (ptr);
 	}
+	return (NULL);
 }
-/*#include <stdio.h>
+/*
 int main() {
     int *arr;
     int n = 5;
@@ -43,4 +44,4 @@ int main() {
     free(arr);
 
     return 0;
-} */
+}*/
