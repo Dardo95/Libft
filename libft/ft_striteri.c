@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-static void	ft_toup(unsigned int i, char *c)
+/*static void	ft_toup(unsigned int i, char *c)
 {
 	(void)i;
 	if (c)
@@ -22,7 +22,7 @@ static void	ft_toup(unsigned int i, char *c)
 			*c = *c - 32;
 		}
 	}
-}
+}*/
 
 void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {

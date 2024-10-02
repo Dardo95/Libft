@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-static	char	ft_toup(unsigned int i, char c)
+/*static	char	ft_toup(unsigned int i, char c)
 {
 	(void)i;
 	if (c >= 'a' && c <= 'z' && c)
@@ -20,7 +20,7 @@ static	char	ft_toup(unsigned int i, char c)
 		return (c - 32);
 	}
 	return (c);
-}
+}*/
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {

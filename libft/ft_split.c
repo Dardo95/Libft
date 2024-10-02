@@ -51,7 +51,7 @@ static char	*substring_extract(const char *s, int start, int len)
 	return (substring);
 }
 
-static char **init_var (char const *s, size_t *i, size_t *j, char c)
+static char	**init_var(char const *s, size_t *i, size_t *j, char c)
 {
 	char	**array;
 
@@ -95,7 +95,7 @@ char	**ft_split(char const *s, char c)
 			while (s[i] && s[i] != c)
 				i++;
 			array[j++] = substring_extract(s, start, i);
-			if(!ft_free_clean(array, j - 1))
+			if (!ft_free_clean(array, j - 1))
 				return (NULL);
 		}
 		else
@@ -105,7 +105,7 @@ char	**ft_split(char const *s, char c)
 	return (array);
 }
 
-int main(void)
+/*int main(void)
 {
     // Prueba de la función ft_split
     char const *str = "Hola! esto es un test";
@@ -130,4 +130,4 @@ int main(void)
     }
 
     return 0;
-}
+}*/
