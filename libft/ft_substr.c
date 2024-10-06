@@ -21,22 +21,22 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		return (NULL);
 	slen = ft_strlen(s);
 	if (start >= slen)
-		len = 0;
+		return (ft_strdup(""));
 	if (len > slen - start)
 		len = slen - start;
-	substr = malloc(sizeof(char) * (len + 1));
+	substr = (char *)malloc(sizeof(char) * (len + 1));
 	if (!substr)
 		return (NULL);
 	ft_strlcpy(substr, s + start, len + 1);
 	return (substr);
 }
-/*
-int	main(void)
+
+/*int	main(void)
 {
 	char *str = "holaMLlamoDardo";
 	char *result;
 
 	result = ft_substr(str, 5, 20);
 	printf("%s", result);
-	free();
+	free(result);
 }*/

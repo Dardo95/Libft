@@ -40,15 +40,11 @@ SRC=        ft_bzero.c \
             ft_tolower.c \
             ft_split.c \
             
-SRC_BONUS=  ft_lstnew.c \
-            ft_lstadd_front.c \
-            ft_lstsize.c \
-            ft_lstlast.c \
-            ft_lstadd_back.c \
-            ft_lstdelone.c \
-            ft_lstclear.c \
-            ft_lstiter.c \
-            ft_lstmap.c \
+SRC_BONUS=  ft_lstnew_bonus.c \
+	    ft_lstadd_front_bonus.c \
+	    ft_lstsize_bonus.c \
+	    ft_lstlast_bonus.c \
+	    ft_lstadd_back_bonus.c \
 
 OBJ= $(SRC:.c=.o) 
 OBJ_BONUS= $(SRC_BONUS:.c=.o)

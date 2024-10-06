@@ -19,5 +19,5 @@ int	ft_tolower(int c)
 		c = c + 32;
 		return (c);
 	}
-	return (0);
+	return (c);
 }

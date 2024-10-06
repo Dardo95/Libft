@@ -23,16 +23,17 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 		return (lensrc);
 	lendst = ft_strlen(dst);
 	i = 0;
-	if (size > lendst)
+	if (!size)
+		return (size + lensrc);
+	while (src[i] && (i + lendst < size - 1))
 	{
-		while (*src != '\0' && i + lendst < (size - 1))
-		{
-			dst[lendst + i] = src[i];
-			i++;
-		}
-		dst[lendst + i] = '\0';
+		dst[lendst + i] = src[i];
+		i++;
 	}
-	return (lendst + lensrc);
+	dst[lendst + i] = '\0';
+	if (lendst < size)
+		return (lendst + lensrc);
+	return (size + lensrc);
 }
 /*
 #include <stdio.h>
