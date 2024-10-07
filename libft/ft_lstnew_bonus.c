@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ryner <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: enogueir <enogueir@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/06 21:47:58 by ryner             #+#    #+#             */
-/*   Updated: 2024/10/06 21:54:06 by ryner            ###   ########.fr       */
+/*   Created: 2024/10/01 13:04:53 by enogueir          #+#    #+#             */
+/*   Updated: 2024/10/07 13:20:36 by enogueir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,25 @@
 
 t_list	*ft_lstnew(void *content)
 {
-	t_list	*new_node;
+	t_list	*newnode;
 
-	new_node = (t_list *)malloc(sizeof(t_list));
-	if (!new_node)
+	newnode = (t_list *)malloc(sizeof(t_list));
+	if (!newnode)
 		return (NULL);
-	new_node->content = content;
-	new_node->next = NULL;
-	return (new_node);
+	newnode->content = content;
+	newnode->next = NULL;
+	return (newnode);
 }
-/*
-int main() {
-    char *data = "Hola mundo!";
-    t_list *nuevo_nodo = ft_lstnew(data);
-    if (nuevo_nodo == NULL) {
-        printf("Error al crear el nodo.\n");
-        return 1;
-    }
-    printf("Contenido del nodo: %s\n", (char *)nuevo_nodo->content);
-    free(nuevo_nodo);
-    return 0; 
+
+/*int	main()
+{
+	t_list	*node1;
+
+	node1 = ft_lstnew("hola");
+	if (node1 != NULL)
+	{
+		printf("Dirección del nodo: %p: ", (void *)node1);
+		printf("%s", (char *)node1->content);
+	}
+	return (0);
 }*/
