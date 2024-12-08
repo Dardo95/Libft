@@ -6,15 +6,16 @@
 /*   By: enogueir <enogueir@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 12:31:56 by enogueir          #+#    #+#             */
-/*   Updated: 2024/09/23 12:32:03 by enogueir         ###   ########.fr       */
+/*   Updated: 2024/11/01 15:22:18 by enogueir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putchar_fd(char c, int fd)
+int	ft_putchar_fd(char c, int fd)
 {
 	write(fd, &c, 1);
+	return (1);
 }
 /*
 int	main(void)

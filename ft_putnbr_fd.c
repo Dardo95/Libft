@@ -6,38 +6,43 @@
 /*   By: enogueir <enogueir@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/27 18:10:14 by enogueir          #+#    #+#             */
-/*   Updated: 2024/09/28 13:52:50 by enogueir         ###   ########.fr       */
+/*   Updated: 2024/11/01 15:47:15 by enogueir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr_fd(int n, int fd)
+size_t	ft_putnbr_fd(long n, int fd)
 {
-	if (n == -2147483648)
+	size_t	i;
+
+	i = 0;
+	if (n == (-__LONG_MAX__) - 1)
 	{
 		ft_putchar_fd('-', fd);
-		ft_putchar_fd('2', fd);
-		n = 147483648;
+		ft_putchar_fd('9', fd);
+		i += 2;
+		n = 223372036854775808;
 	}
-	else if (n < 0)
+	if (n < 0)
 	{
 		ft_putchar_fd('-', fd);
+		i ++;
 		n = -n;
 	}
 	if (n >= 10)
 	{
-		ft_putnbr_fd(n / 10, fd);
-		ft_putnbr_fd(n % 10, fd);
+		i += ft_putnbr_fd(n / 10, fd);
 	}
-	else
-	{
-		ft_putchar_fd(n + '0', fd);
-	}
+	ft_putchar_fd((n % 10) + '0', fd);
+	return (i + 1);
 }
-/*int	main(void)
+
+/*#include <stdio.h>
+int	main(void)
 {
-    int number = 84574451;
-    ft_putnbr_fd(number, 1);
+    int number = -84574451;
+
+    printf("\n%lu\n", ft_putnbr_fd(number, 1));
     return 0;
 }*/
