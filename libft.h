@@ -15,6 +15,17 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <stdarg.h>
+# include <fcntl.h>
+# include <stdlib.h>
+# include <unistd.h>
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 42
+# endif
+
+# ifndef MAX_FD
+#  define MAX_FD 1024
+# endif
 
 typedef struct s_list
 {
@@ -69,5 +80,6 @@ int		ft_printf(char const *str, ...);
 int		ft_var_opt(va_list args, const char format);
 size_t	ft_putnbr_hex(size_t n, int uppercase);
 size_t	ft_putptr(size_t ptr);
+char	*get_next_line(int fd);
 
 #endif
